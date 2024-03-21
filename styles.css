@@ -2,7 +2,12 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-image: url('https://media2.giphy.com/media/3oEduJbDtI5pZdNzAs/giphy.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
+
 #game-container {
     position: relative;
     width: 500px;
@@ -10,17 +15,18 @@ body, html {
     margin: 50px auto;
     border: 5px solid blue;
 }
+
 #ball {
     width: 50px;
     height: 50px;
-    background-color:from {background-color: red;}
-  to {background-color: blue;};
+    background-color: red;
     border-radius: 50%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 #goal {
     width: 50px;
     height: 50px;
