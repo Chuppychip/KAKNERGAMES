@@ -1,33 +1,33 @@
-# Roll-A-Ball Game - Wiebelen, Rollen en Lachen!
+# Roll-A-Ball Game - Roll, Tumble, and Giggle!
 
-Welkom bij Roll-A-Ball, het meest onzinnige, maar ongelooflijk vermakelijke rollenspel dat je ooit zult spelen! Dit spel is het resultaat van een krankzinnig idee dat uit de hand is gelopen, maar we beloven je, het zal je zeker laten lachen terwijl je je een weg baant door het absurditeit.
+Welcome to Roll-A-Ball, the wackiest, most entertaining ball rolling game you'll ever play on the web! Prepare yourself for a rollercoaster of absurdity and laughter as you navigate your way through this unconventional journey.
 
-## Hoe te spelen
+## How to Play
 
-1. **Doel van het spel**: Het doel is simpel - rol je bal door het doolhof en probeer alle glimmende sterren te verzamelen. Waarom? Geen idee! Maar het verzamelen van dingen is gewoon leuk, toch?
+1. **Objective**: The goal is simple - roll your ball through the maze and collect all the shiny stars. Why? Who knows! But collecting stuff is just plain fun, right?
 
-2. **Bediening**: Gebruik de pijltjestoetsen op je toetsenbord om de bal te besturen. Maar wees gewaarschuwd, deze bal is zo onvoorspelbaar als een kip op een skateboard!
+2. **Controls**: Use the arrow keys on your keyboard to maneuver the ball. But beware, this ball is as unpredictable as a chicken on a unicycle!
 
-3. **Wees voorbereid op chaos**: Verwacht geen logica in dit spel. Je kunt van de ene seconde op de andere plotseling door de lucht vliegen, landen in een gigantische bak met gelatine of misschien zelfs in een omgekeerde wereld belanden waar de zwaartekracht niet bestaat. Gewoon accepteren en genieten van de rit!
+3. **Expect Chaos**: Don't expect any logic in this game. You might find yourself soaring through the air one moment, landing in a massive pool of gelatin the next, or perhaps even ending up in a topsy-turvy world where gravity doesn't exist. Just embrace the madness and enjoy the ride!
 
-4. **Blijf lachen**: Hoe frustrerend het ook kan zijn om steeds opnieuw te falen, onthoud altijd: het is maar een spelletje! Dus lach om de absurde situaties waarin je belandt en rol gewoon verder.
+4. **Keep Laughing**: No matter how frustrating it may be to fail over and over again, always remember: it's just a game! So laugh at the absurd situations you find yourself in and just keep rolling.
 
-## Installatie
+## How to Play
 
-1. **Downloaden**: Haal het spel binnen door naar de downloadpagina te gaan. Wees gewaarschuwd, het downloaden van dit spel kan onverwachte gevolgen hebben voor je humeur!
+1. **Play Online**: No need to download anything! Simply visit our website [Roll-A-Ball.com](https://www.rollaball.com) to start playing instantly.
 
-2. **Uitpakken**: Pak het ZIP-bestand uit en onthul de gekte die binnenin wacht.
+2. **Instructions**: Once you're on the website, follow the on-screen instructions to begin your journey through the whimsical world of Roll-A-Ball.
 
-3. **Spelen maar!**: Dubbelklik op het uitvoerbare bestand en laat de pret beginnen! Wees voorbereid op alles wat op je afkomt en rol met de situatie.
+3. **Have Fun!**: Get ready to roll, tumble, and giggle your way through an adventure like no other. And don't forget to share the laughter with your friends!
 
-## Bijdragen
+## Contributions
 
-Als je nog meer gekheid wilt toevoegen aan dit toch al knotsgekke spel, voel je vrij om een bijdrage te leveren! We staan open voor alle soorten dwaasheid en absurditeit.
+If you have ideas for adding even more madness to this already crazy game, feel free to contribute! We're open to all kinds of silliness and absurdity.
 
-## Problemen en Bugs
+## Issues and Bugs
 
-Als je een bug tegenkomt die je ervaring bederft, lach er dan gewoon om en laat het ons weten. We kunnen niet beloven dat we het oplossen, maar we kunnen je wel beloven dat we erom zullen lachen!
+If you encounter a bug or anything that dampens your experience, just laugh it off and let us know. We can't promise to fix it, but we can promise to laugh along with you!
 
 ---
 
-*Roll-A-Ball is gemaakt door het team "KAKNER GAMES" met een overdosis aan cafeïne en een tekort aan gezond verstand. Geniet ervan!*
+*Roll-A-Ball is brought to you by the "KAKNERGAMES" team fueled by caffeine and lacking in common sense. Enjoy the ride!*
