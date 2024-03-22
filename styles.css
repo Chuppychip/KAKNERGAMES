@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-image: url('https://media2.giphy.com/media/3oEduJbDtI5pZdNzAs/giphy.gif');
+    background-image: url('https://www.gonect.nl/wp-content/uploads/happy.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -10,15 +10,19 @@ body, html {
 
 #game-container {
     position: relative;
-    width: 500px;
-    height: 500px;
-    margin: 50px auto;
+    width: calc(90vw - 100px); /* 90% van de viewport breedte minus 100px marge */
+    height: calc(90vw - 100px); /* 90% van de viewport breedte minus 100px marge */
+    max-width: 500px; /* Maximale breedte van 500px */
+    max-height: 500px; /* Maximale hoogte van 500px */
+    margin: 5vh auto; /* Verticale marge van 5% van de viewport hoogte */
     border: 5px solid blue;
 }
 
 #ball {
-    width: 50px;
-    height: 50px;
+    width: 5%; /* Breedte van 5% van het container */
+    height: 5%; /* Hoogte van 5% van het container */
+    min-width: 50px; /* Minimale breedte van 50px */
+    min-height: 50px; /* Minimale hoogte van 50px */
     background-color: red;
     border-radius: 50%;
     position: absolute;
@@ -28,8 +32,10 @@ body, html {
 }
 
 #goal {
-    width: 50px;
-    height: 50px;
+    width: 5%; /* Breedte van 5% van het container */
+    height: 5%; /* Hoogte van 5% van het container */
+    min-width: 50px; /* Minimale breedte van 50px */
+    min-height: 50px; /* Minimale hoogte van 50px */
     background-color: purple;
     position: absolute;
     top: 80%;
