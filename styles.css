@@ -12,7 +12,7 @@ body, html {
     position: relative;
     width: calc(90vw - 100px); /* 90% van de viewport breedte minus 100px marge */
     height: calc(90vw - 100px); /* 90% van de viewport breedte minus 100px marge */
-    max-width: 1000px; /* Maximale breedte van 500px */
+    max-width: 900px; /* Maximale breedte van 500px */
     max-height: 500px; /* Maximale hoogte van 500px */
     margin: 5vh auto; /* Verticale marge van 5% van de viewport hoogte */
     border: 5px solid blue;
@@ -32,10 +32,10 @@ body, html {
 }
 
 .goal {
-    width: 5%; /* Breedte van 5% van het container */
-    height: 5%; /* Hoogte van 5% van het container */
+    width: 7%; /* Breedte van 5% van het container */
+    height: 7%; /* Hoogte van 5% van het container */
     min-width: 50px; /* Minimale breedte van 50px */
     min-height: 50px; /* Minimale hoogte van 50px */
-    background-color: purple;
+    background-color: greeen;
     position: absolute;
 }
