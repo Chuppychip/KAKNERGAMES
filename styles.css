@@ -31,11 +31,16 @@ body, html {
     transform: translate(-50%, -50%);
 }
 
-goal {
+.goal {
     width: 7%; /* Breedte van 5% van het container */
     height: 7%; /* Hoogte van 5% van het container */
     min-width: 50px; /* Minimale breedte van 50px */
     min-height: 50px; /* Minimale hoogte van 50px */
-    background-color: greeen;
+    background-color: green;
     position: absolute;
+}
+
+/* Zorg ervoor dat doelen altijd bovenop bal liggen */
+.goal {
+    z-index: 1;
 }
