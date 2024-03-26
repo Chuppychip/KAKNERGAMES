@@ -1,46 +1,55 @@
-body, html {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100%;
-    background-image: url('https://www.gonect.nl/wp-content/uploads/happy.gif');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    overflow: hidden;
+}
+
+#start-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: none;
 }
 
 #game-container {
     position: relative;
-    width: calc(90vw - 100px); /* 90% van de viewport breedte minus 100px marge */
-    height: calc(90vw - 100px); /* 90% van de viewport breedte minus 100px marge */
-    max-width: 900px; /* Maximale breedte van 500px */
-    max-height: 500px; /* Maximale hoogte van 500px */
-    margin: 5vh auto; /* Verticale marge van 5% van de viewport hoogte */
-    border: 5px solid blue;
+    width: 100vw;
+    height: 100vh;
+}
+
+#play-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: lightblue;
 }
 
 #ball {
-    width: 5%; /* Breedte van 5% van het container */
-    height: 5%; /* Hoogte van 5% van het container */
-    min-width: 50px; /* Minimale breedte van 50px */
-    min-height: 50px; /* Minimale hoogte van 50px */
+    position: absolute;
+    width: 50px;
+    height: 50px;
     background-color: red;
     border-radius: 50%;
-    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
 .goal {
-    width: 7%; /* Breedte van 5% van het container */
-    height: 7%; /* Hoogte van 5% van het container */
-    min-width: 50px; /* Minimale breedte van 50px */
-    min-height: 50px; /* Minimale hoogte van 50px */
-    background-color: green;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
     position: absolute;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
-/* Zorg ervoor dat doelen altijd bovenop bal liggen */
-.goal {
-    z-index: 1;
+#score {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
 }
