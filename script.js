@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     startBtn.addEventListener("click", function() {
         startScreen.style.display = "none";
-        gameContainer.style.display = "block";
+        gameContainer.style.display = "block"; // Zorg ervoor dat het speelveld zichtbaar wordt na klikken op startknop
         startGame();
     });
 
