@@ -1,130 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roll a Ball Game</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-    canvas {
-        background-color: #f0f0f0;
-        display: block;
-        margin: auto;
-    }
-    #overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        font-size: 24px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roll a Ball</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="overlay">
-    <button onclick="startGame()">Start Game</button>
-</div>
-
-<canvas id="gameCanvas" width="800" height="600"></canvas>
-
-<script>
-    // Canvas setup
-    const canvas = document.getElementById('gameCanvas');
-    const ctx = canvas.getContext('2d');
-
-    // Ball object
-    let ball = {
-        x: canvas.width / 2,
-        y: canvas.height / 2,
-        radius: 10,
-        dx: 2,
-        dy: 2
-    };
-
-    // Goal object
-    let goal = {
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        radius: 15
-    };
-
-    // Score
-    let score = 0;
-
-    // Function to draw ball
-    function drawBall() {
-        ctx.beginPath();
-        ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'blue';
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    // Function to draw goal
-    function drawGoal() {
-        ctx.beginPath();
-        ctx.arc(goal.x, goal.y, goal.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'red';
-        ctx.fill();
-        ctx.closePath();
-    }
-
-    // Function to detect collision between ball and goal
-    function detectCollision() {
-        let distance = Math.sqrt(Math.pow((ball.x - goal.x), 2) + Math.pow((ball.y - goal.y), 2));
-        if (distance < ball.radius + goal.radius) {
-            score++;
-            goal.x = Math.random() * canvas.width;
-            goal.y = Math.random() * canvas.height;
-        }
-    }
-
-    // Function to update game
-    function update() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        drawBall();
-        drawGoal();
-        detectCollision();
-
-        // Move the ball
-        ball.x += ball.dx;
-        ball.y += ball.dy;
-
-        // Check if the ball hits the walls
-        if (ball.x + ball.radius > canvas.width || ball.x - ball.radius < 0) {
-            ball.dx *= -1;
-        }
-        if (ball.y + ball.radius > canvas.height || ball.y - ball.radius < 0) {
-            ball.dy *= -1;
-        }
-
-        // Display score
-        ctx.fillStyle = 'black';
-        ctx.font = '20px Arial';
-        ctx.fillText('Score: ' + score, 10, 30);
-
-        requestAnimationFrame(update);
-    }
-
-    // Start game function
-    function startGame() {
-        document.getElementById('overlay').style.display = 'none';
-        update();
-    }
-</script>
-
+    <div id="start-screen">
+        <h1>Roll a Ball</h1>
+        <button id="start-btn">Start Game</button>
+    </div>
+    <div id="game-container">
+        <div id="play-area">
+            <div id="ball"></div>
+            <div class="goal"></div>
+            <div class="goal"></div>
+            <div class="goal"></div>
+        </div>
+        <div id="score">Score: <span id="score-value">0</span></div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
