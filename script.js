@@ -1,80 +1,82 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const startScreen = document.getElementById("start-screen");
-    const startBtn = document.getElementById("start-btn");
-    const gameContainer = document.getElementById("game-container");
-    const ball = document.getElementById("ball");
-    const scoreValue = document.getElementById("score-value");
-    const goals = document.querySelectorAll(".goal");
+    const ball = document.getElementById('ball');
+    const goal = document.getElementById('goal');
+    const gameContainer = document.getElementById('game-container');
+    const gameContainerRect = gameContainer.getBoundingClientRect();
 
-    let score = 0;
+    // Beweging van de bal
+    document.addEventListener('keydown', function(event) {
+        const key = event.key;
+        const ballStyle = getComputedStyle(ball);
+        const ballLeft = parseInt(ballStyle.left);
+        const ballTop = parseInt(ballStyle.top);
 
-    startBtn.addEventListener("click", function() {
-        startScreen.style.display = "none";
-        gameContainer.style.display = "block"; // Zorg ervoor dat het speelveld zichtbaar wordt na klikken op startknop
-        startGame();
+        switch (key) {
+            case 'ArrowUp':
+                if (ballTop > gameContainerRect.top) {
+                    ball.style.top = (ballTop - 10) + 'px';
+                } else {
+                    alert('GVD, jij bent KAKNER slecht in dit spel. Da hell..');
+                }
+                break;
+            case 'ArrowDown':
+                if (ballTop < gameContainerRect.bottom - ball.offsetHeight) {
+                    ball.style.top = (ballTop + 10) + 'px';
+                } else {
+                    alert('GVD, jij bent KAKNER slecht in dit spel. Da hell..');
+                }
+                break;
+            case 'ArrowLeft':
+                if (ballLeft > gameContainerRect.left) {
+                    ball.style.left = (ballLeft - 10) + 'px';
+                } else {
+                    alert('GVD, jij bent KAKNER slecht in dit spel. Da hell..');
+                }
+                break;
+            case 'ArrowRight':
+                if (ballLeft < gameContainerRect.right - ball.offsetWidth) {
+                    ball.style.left = (ballLeft + 10) + 'px';
+                } else {
+                    alert('GVD, jij bent KAKNER slecht in dit spel. Da hell..');
+                }
+                break;
+        }
+        // Controleer winvoorwaarde
+        if (checkCollision(ball, goal)) {
+            alert('AH WAT DE FAK, JIJ KAN WAT?!?!?');
+        }
     });
 
-    function startGame() {
-        // Initialize ball position
-        let ballX = gameContainer.offsetWidth / 2;
-        let ballY = gameContainer.offsetHeight / 2;
+    // Controleer of de bal het doel bereikt
+    function checkCollision(ball, goal) {
+        const ballRect = ball.getBoundingClientRect();
+        const goalRect = goal.getBoundingClientRect();
+        return !(ballRect.right < goalRect.left || 
+                 ballRect.left > goalRect.right || 
+                 ballRect.bottom < goalRect.top || 
+                 ballRect.top > goalRect.bottom);
+    }
+});
 
-        // Update ball position
-        function updateBallPosition() {
-            ball.style.left = ballX + "px";
-            ball.style.top = ballY + "px";
-        }
+document.addEventListener("DOMContentLoaded", function() {
+    // Functie om willekeurige coördinaten te genereren binnen het speelvak
+    function getRandomPosition() {
+        // Breedte en hoogte van het speelvak
+        var maxWidth = document.getElementById("game-container").offsetWidth;
+        var maxHeight = document.getElementById("game-container").offsetHeight;
 
-        // Update score
-        function updateScore() {
-            score++;
-            scoreValue.textContent = score;
-        }
+        // Willekeurige x- en y-coördinaten
+        var randomX = Math.floor(Math.random() * (maxWidth - 50)); // 50 is de breedte van het doel
+        var randomY = Math.floor(Math.random() * (maxHeight - 50)); // 50 is de hoogte van het doel
 
-        // Check collision with goals
-        function checkCollision() {
-            goals.forEach(goal => {
-                let goalRect = goal.getBoundingClientRect();
-                let ballRect = ball.getBoundingClientRect();
+        return [randomX, randomY];
+    }
 
-                if (ballRect.left < goalRect.right &&
-                    ballRect.right > goalRect.left &&
-                    ballRect.top < goalRect.bottom &&
-                    ballRect.bottom > goalRect.top) {
-                        updateScore();
-                        resetGoal(goal);
-                }
-            });
-        }
-
-        // Reset goal position
-        function resetGoal(goal) {
-            goal.style.left = Math.random() * (gameContainer.offsetWidth - 30) + "px";
-            goal.style.top = Math.random() * (gameContainer.offsetHeight - 30) + "px";
-        }
-
-        // Move ball with arrow keys
-        document.addEventListener("keydown", function(event) {
-            const speed = 10;
-            switch(event.key) {
-                case "ArrowUp":
-                    ballY -= speed;
-                    break;
-                case "ArrowDown":
-                    ballY += speed;
-                    break;
-                case "ArrowLeft":
-                    ballX -= speed;
-                    break;
-                case "ArrowRight":
-                    ballX += speed;
-                    break;
-            }
-            updateBallPosition();
-            checkCollision();
-        });
-        
-        // Initial ball position
-        updateBallPosition();
+    // Doelen selecteren en hun positie instellen
+    var goals = document.getElementsByClassName("goal");
+    for (var i = 0; i < goals.length; i++) {
+        var position = getRandomPosition();
+        goals[i].style.left = position[0] + "px";
+        goals[i].style.top = position[1] + "px";
     }
 });
