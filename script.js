@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const ball = document.getElementById('ball');
-    const goal = document.getElementById('goal');
     const gameContainer = document.getElementById('game-container');
     const gameContainerRect = gameContainer.getBoundingClientRect();
+    const goal = createGoal();
 
     // Beweging van de bal
     document.addEventListener('keydown', function(event) {
@@ -47,23 +47,11 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    // Controleer of de bal het doel bereikt
-    function checkCollision(ball, goal) {
-        const ballRect = ball.getBoundingClientRect();
-        const goalRect = goal.getBoundingClientRect();
-        return !(ballRect.right < goalRect.left || 
-                 ballRect.left > goalRect.right || 
-                 ballRect.bottom < goalRect.top || 
-                 ballRect.top > goalRect.bottom);
-    }
-});
-
-document.addEventListener("DOMContentLoaded", function() {
     // Functie om willekeurige coördinaten te genereren binnen het speelvak
     function getRandomPosition() {
         // Breedte en hoogte van het speelvak
-        var maxWidth = document.getElementById("game-container").offsetWidth;
-        var maxHeight = document.getElementById("game-container").offsetHeight;
+        var maxWidth = gameContainer.offsetWidth;
+        var maxHeight = gameContainer.offsetHeight;
 
         // Willekeurige x- en y-coördinaten
         var randomX = Math.floor(Math.random() * (maxWidth - 50)); // 50 is de breedte van het doel
@@ -72,11 +60,28 @@ document.addEventListener("DOMContentLoaded", function() {
         return [randomX, randomY];
     }
 
-    // Doelen selecteren en hun positie instellen
-    var goals = document.getElementsByClassName("goal");
-    for (var i = 0; i < goals.length; i++) {
-        var position = getRandomPosition();
-        goals[i].style.left = position[0] + "px";
-        goals[i].style.top = position[1] + "px";
+    // Functie om een doel te maken
+    function createGoal() {
+        // Doel element maken
+        const goal = document.createElement('div');
+        goal.classList.add('goal');
+        gameContainer.appendChild(goal);
+
+        // Positie instellen
+        const position = getRandomPosition();
+        goal.style.left = position[0] + 'px';
+        goal.style.top = position[1] + 'px';
+
+        return goal;
+    }
+
+    // Controleer of de bal het doel bereikt
+    function checkCollision(ball, goal) {
+        const ballRect = ball.getBoundingClientRect();
+        const goalRect = goal.getBoundingClientRect();
+        return !(ballRect.right < goalRect.left || 
+                 ballRect.left > goalRect.right || 
+                 ballRect.bottom < goalRect.top || 
+                 ballRect.top > goalRect.bottom);
     }
 });
